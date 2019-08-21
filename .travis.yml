@@ -10,7 +10,7 @@ before_install:
 
 #-- -- coverage to make the test exit with a status code and not go into watch mode
 script:
-  - docker run -e CI=true aadi7568/react-test npm test
+  - docker run -e CI=true aadi7568/react-test npm test -- --watchAll=false
 
 after_success:
   - docker build -t aadi7568/multi-client ./client
